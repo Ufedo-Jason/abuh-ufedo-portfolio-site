@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const { data } = project;
+---
+<BaseLayout title={data.title} description={data.summary} image={data.cover}>
+  <div class="shell page-topline"><span>Project / Case study</span><span>{data.category}</span></div>
+  <section class="shell detail-hero">
+    <p class="eyebrow">{data.category} · {data.period}</p>
+    <h1>{data.title}</h1>
+    <p class="detail-summary">{data.summary}</p>
+    <div class="detail-meta-row">
+      <div class="detail-meta-item"><span>My role</span><span>{data.role}</span></div>
+      <div class="detail-meta-item"><span>Project status</span><span>{data.status}</span></div>
+      <div class="detail-meta-item"><span>Focus</span><span>{data.tags.join(' · ')}</span></div>
+    </div>
+    <img class="detail-cover" src={data.cover} alt={`Illustration for ${data.title}`} />
+  </section>
+  <section class="shell article-layout">
+    <article class="prose"><Content />
+      {data.publicNote && <div class="public-note"><strong>Sharing note:</strong> {data.publicNote}</div>}
+    </article>
+    <aside class="article-aside">
+      <div class="article-aside-box">
+        <p class="eyebrow">Project notes</p>
+        <p>This case study is a living document. As the work develops, I will add validated results, design decisions and supporting materials that are appropriate to share.</p>
+        <div class="tag-list">{data.tags.map((tag) => <span class="tag">{tag}</span>)}</div>
+        <div class="spacer-sm"></div>
+        <a class="text-link" href="/projects/">All projects <span aria-hidden="true">↗</span></a>
+      </div>
+    </aside>
+  </section>
+</BaseLayout>

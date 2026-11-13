@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8dfd0"/><stop offset="1" stop-color="#d4c7b3"/></linearGradient></defs>
+  <rect width="1000" height="660" fill="url(#bg)"/>
+  <g transform="translate(260 90) rotate(-7 250 230)">
+    <rect x="0" y="0" width="475" height="455" fill="#f8f5eb" stroke="#234c3e" stroke-width="3"/>
+    <path d="M48 70h375M48 125h375M48 180h375M48 235h375M48 290h375M48 345h375" stroke="#9ba897" stroke-opacity=".5" stroke-width="2"/>
+    <path d="M75 100c42-35 72 42 118 0s73 31 116-3" fill="none" stroke="#ca6845" stroke-width="5" stroke-linecap="round"/>
+    <path d="M70 163h200m-200 55h310m-310 55h250" stroke="#234c3e" stroke-width="5" stroke-opacity=".65" stroke-linecap="round"/>
+    <circle cx="350" cy="115" r="34" fill="none" stroke="#234c3e" stroke-width="3"/>
+    <path d="M350 81v68m-34-34h68" stroke="#234c3e" stroke-width="2"/>
+    <path d="m70 330 70 35 80-68 80 45 90-85" fill="none" stroke="#ca6845" stroke-width="4"/>
+  </g>
+  <g fill="#234c3e" font-family="monospace"><text x="65" y="75" font-size="15" letter-spacing="3">THOUGHTS / SKETCHES / QUESTIONS</text><text x="65" y="600" font-size="13" letter-spacing="2" fill-opacity=".7">THE WORK BETWEEN THE MILESTONES</text><text x="935" y="600" text-anchor="end" font-size="12" fill-opacity=".65">FIG. 06</text></g>
+</svg>

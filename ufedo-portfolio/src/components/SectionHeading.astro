@@ -1,0 +1,18 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  text?: string;
+  number?: string;
+  compact?: boolean;
+}
+const { eyebrow, title, text, number, compact = false } = Astro.props;
+---
+<div class:list={["section-heading", compact && "section-heading-compact"]}>
+  <div>
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h2>{title}</h2>
+    {text && <p class="section-intro">{text}</p>}
+  </div>
+  {number && <span class="section-number">{number}</span>}
+</div>

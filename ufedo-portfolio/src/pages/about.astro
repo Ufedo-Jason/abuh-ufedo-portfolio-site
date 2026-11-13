@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="About" description="The story, motivations and interests behind Abuh Ufedo's engineering work and writing.">
+  <div class="shell page-topline"><span>Personal profile / 001</span><span>About the person behind the work</span></div>
+  <section class="shell page-intro">
+    <p class="eyebrow">A little context</p>
+    <h1>Not just what I do.<br /><em>Why I keep doing it.</em></h1>
+    <p class="lead">I'm interested in the space between a difficult problem and a working solution: understanding the system, asking better questions, and patiently turning ideas into something useful.</p>
+    {site.cvUrl && <div class="spacer-sm"></div>}
+    {site.cvUrl && <a class="arrow-link" href={site.cvUrl} target="_blank" rel="noreferrer">Download my CV <span aria-hidden="true">↗</span></a>}
+  </section>
+  <section class="section">
+    <div class="shell about-layout">
+      <aside class="profile-card">
+        <div class="profile-image"><img src={site.portrait} alt="Portrait placeholder for Abuh Ufedo. Replace with a personal photograph." /></div>
+        <div class="profile-card-caption"><span>{site.name}</span><span>Nigeria · {new Date().getFullYear()}</span></div>
+      </aside>
+      <div class="about-copy">
+        <p class="eyebrow">The short version</p>
+        <h2>Engineer by training. Builder by instinct. Learner by habit.</h2>
+        <p class="drop-cap">I studied Electrical and Electronics Engineering at the University of Ilorin, where I graduated with First Class Honours in the Computer and Control Systems option. My academic interests drew me towards computer architecture, digital systems, signal processing and the relationship between hardware and the intelligence it makes possible.</p>
+        <p>But my curiosity has never stayed neatly inside a course outline. I enjoy taking an idea apart, understanding the constraints around it, and finding a way to make it work in the real world. That instinct has taken me from healthcare-focused hardware projects to AI-assisted document processing, and increasingly towards the circuits and physical systems that make modern communication and computation possible.</p>
+        <p>I'm particularly interested in RF and microwave systems, integrated circuits, microelectronics, photonics and intelligent hardware. I am still building depth in these areas, and this website is partly a record of that process: what I read, what I test, what I get wrong and what I learn along the way.</p>
+        <p>Outside the technical work, I value thoughtful writing, collaboration and the kind of curiosity that crosses disciplines. I want this space to reflect that breadth rather than reduce a person to a job title.</p>
+        <div class="callout"><strong>What matters to me:</strong> Useful engineering, honest learning, careful experimentation and technology designed with the people who will depend on it in mind.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <SectionHeading eyebrow="A few chapters" title="How the questions took shape." text="A selective timeline of experiences that influenced the direction of my work." number="01 — 05" />
+      <div class="story-list">
+        <div class="story-item"><time>Early curiosity</time><div><h3>Taking things apart to understand them</h3><p>Growing up around radios, DVD players and the occasional household repair encouraged an early interest in the objects that made everyday technology work.</p></div></div>
+        <div class="story-item"><time>University</time><div><h3>From electronics fundamentals to systems thinking</h3><p>Electrical and Electronics Engineering gave that curiosity a foundation in circuits, digital systems, signal processing, control and computer architecture.</p></div></div>
+        <div class="story-item"><time>August 2024</time><div><h3>A weather radar and a new direction of curiosity</h3><p>During industrial training at the Nigerian Meteorological Agency, seeing the weather-radar installation prompted questions about antennas, radio-frequency signals and the electronics that generate and receive them.</p></div></div>
+        <div class="story-item"><time>2024–2025</time><div><h3>Building for problems beyond the classroom</h3><p>AfroVax and Medvi became opportunities to work across hardware, software, healthcare needs, prototyping and the practical compromises involved in making a system useful.</p></div></div>
+        <div class="story-item"><time>Now</time><div><h3>Looking more closely at the hardware layer</h3><p>My learning is increasingly focused on RFIC, microelectronics, photonics and energy-efficient intelligent systems, alongside experiments and writing that help me test what I understand.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <SectionHeading eyebrow="Current areas of curiosity" title="Questions I'm following." text="These are directions I want to understand more deeply, not claims of expertise. The list will change as I learn." />
+      <div class="focus-grid">
+        {site.currentFocus.map((item, i) => <div class="focus-item"><span>0{i + 1}</span><h3>{item}</h3></div>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

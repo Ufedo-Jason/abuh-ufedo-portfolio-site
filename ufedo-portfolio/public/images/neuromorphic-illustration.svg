@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dedcd1"/><stop offset="1" stop-color="#c5c7b8"/></linearGradient></defs>
+  <rect width="1000" height="660" fill="url(#bg)"/>
+  <g stroke="#234c3e" stroke-opacity=".34" stroke-width="3" fill="none">
+    <path d="M185 220 420 155 630 250 810 160M185 220 410 425 630 250 790 445M185 220 275 480 410 425 810 160M275 480 630 250 790 445"/>
+    <path d="M185 220 410 425 810 160M275 480 630 250" stroke-dasharray="7 10"/>
+  </g>
+  <g fill="#234c3e" stroke="#f4f1e9" stroke-width="4">
+    <circle cx="185" cy="220" r="42"/><circle cx="420" cy="155" r="34"/><circle cx="630" cy="250" r="48"/><circle cx="810" cy="160" r="34"/><circle cx="275" cy="480" r="34"/><circle cx="410" cy="425" r="38"/><circle cx="790" cy="445" r="42"/>
+  </g>
+  <g fill="#c8d67b"><circle cx="185" cy="220" r="11"/><circle cx="420" cy="155" r="9"/><circle cx="630" cy="250" r="13"/><circle cx="810" cy="160" r="9"/><circle cx="275" cy="480" r="9"/><circle cx="410" cy="425" r="10"/><circle cx="790" cy="445" r="11"/></g>
+  <g stroke="#ca6845" stroke-width="5" stroke-linecap="round"><path d="M185 155v-34m-16 47-22-24m60 12 22-23M630 178v-31m-17 40-24-20m59 11 23-20"/></g>
+  <g fill="#234c3e" font-family="monospace"><text x="65" y="75" font-size="15" letter-spacing="3">COMPUTATIONAL EXPERIMENTS</text><text x="65" y="600" font-size="13" letter-spacing="2" fill-opacity=".7">SPIKES · TIMING · PLASTICITY</text><text x="935" y="600" text-anchor="end" font-size="12" fill-opacity=".65">FIG. 05</text></g>
+</svg>

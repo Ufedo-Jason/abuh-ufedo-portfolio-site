@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+const socials = [
+  { label: 'LinkedIn', href: site.linkedin },
+  { label: 'GitHub', href: site.github },
+  { label: 'Medium', href: site.medium },
+].filter((item) => item.href);
+---
+<BaseLayout title="Contact" description="Contact Abuh Ufedo for research conversations, engineering collaborations and thoughtful ideas.">
+  <div class="shell page-topline"><span>Open door / 007</span><span>Conversations & collaboration</span></div>
+  <section class="shell page-intro">
+    <p class="eyebrow">Say hello</p>
+    <h1>Good work begins<br /><em>with good conversations.</em></h1>
+    <p class="lead">I'm glad to connect with researchers, engineers, students, founders and curious people working on meaningful problems. Reach out with a question, an idea or simply a perspective worth exchanging.</p>
+  </section>
+  <section class="section">
+    <div class="shell">
+      <div class="contact-panel">
+        <div>
+          <p class="eyebrow">Start a conversation</p>
+          <h2>What are you working on?</h2>
+          <p>I'm especially interested in conversations around electronics, RF and photonics, hardware innovation, research opportunities and thoughtful technology for real-world problems.</p>
+        </div>
+        <div class="contact-options">
+          {site.email ? <a class="contact-option" href={`mailto:${site.email}`}><span>{site.email}</span><span>↗</span></a> : <div class="contact-option"><span>Email address to be added</span><span>01</span></div>}
+          {socials.map((item) => <a class="contact-option" href={item.href} target="_blank" rel="noreferrer"><span>{item.label}</span><span>↗</span></a>)}
+          {socials.length === 0 && <div class="contact-option"><span>Professional profile links to be added</span><span>02</span></div>}
+        </div>
+      </div>
+      <div class="spacer-sm"></div>
+      <p class="prose-small">Before publishing, add your preferred email and profile URLs in <code>src/data/site.ts</code>. They will appear here automatically. Only publish contact details you are comfortable making public.</p>
+    </div>
+  </section>
+</BaseLayout>

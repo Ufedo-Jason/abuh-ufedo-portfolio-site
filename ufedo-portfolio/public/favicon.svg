@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#234c3e"/>
+  <path d="M12 12h40v40H12z" fill="none" stroke="#c8d67b" stroke-width="1.2" transform="rotate(-7 32 32)"/>
+  <text x="32" y="37" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#f4f1e9" letter-spacing="-2">AU</text>
+</svg>

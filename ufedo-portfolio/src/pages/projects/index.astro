@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout title="Projects" description="Selected engineering projects, prototypes and computational experiments by Abuh Ufedo.">
+  <div class="shell page-topline"><span>Portfolio / 002</span><span>Selected work & experiments</span></div>
+  <section class="shell page-intro">
+    <p class="eyebrow">The workbench</p>
+    <h1>Ideas are interesting.<br /><em>Making them work is better.</em></h1>
+    <p class="lead">A collection of projects, prototypes and experiments. Each page focuses on the problem, the approach, my contribution, the lessons and what could come next.</p>
+  </section>
+  <section class="section">
+    <div class="shell">
+      <SectionHeading eyebrow="Project index" title="A few things I've worked on." text="The work spans healthcare hardware, document intelligence and early explorations in electronic and computational systems." number={`0${projects.length}`} />
+      <div class="project-grid">
+        {projects.map((project, index) => <ProjectCard project={project} index={index} />)}
+      </div>
+      <div class="spacer-sm"></div>
+      <p class="prose-small">Some projects are ongoing or exploratory. Their pages distinguish completed work from current learning, and focus on the parts that can be shared publicly.</p>
+    </div>
+  </section>
+</BaseLayout>

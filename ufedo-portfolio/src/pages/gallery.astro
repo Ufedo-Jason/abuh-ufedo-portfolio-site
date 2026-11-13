@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { gallery } from '../data/gallery';
+---
+<BaseLayout title="Gallery" description="A visual notebook of engineering projects, prototypes and learning by Abuh Ufedo.">
+  <div class="shell page-topline"><span>Visual archive / 005</span><span>Projects, process & moments</span></div>
+  <section class="shell page-intro">
+    <p class="eyebrow">A visual notebook</p>
+    <h1>Some things are easier<br /><em>to remember in pictures.</em></h1>
+    <p class="lead">A growing collection of project moments, experiments, field notes and behind-the-scenes glimpses. The current visuals are editorial illustrations; replace or supplement them with your own photographs as you prepare the site for launch.</p>
+  </section>
+  <section class="section">
+    <div class="shell">
+      <SectionHeading eyebrow="The collection" title="A few windows into the work." />
+      <div class="gallery-grid">
+        {gallery.map((item) => <article class="gallery-card"><div class="gallery-image"><img src={item.src} alt={item.alt} loading="lazy" /></div><div class="gallery-meta"><span>{item.type}</span><span>Fieldnote</span></div><h3>{item.title}</h3><p>{item.caption}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

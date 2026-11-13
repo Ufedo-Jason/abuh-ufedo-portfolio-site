@@ -1,0 +1,47 @@
+---
+import { navigation, site } from '../data/site';
+const currentPath = Astro.url.pathname;
+---
+<header class="site-header">
+  <div class="header-inner shell">
+    <a class="wordmark" href="/" aria-label={`${site.name}, home`}>
+      <span class="wordmark-mark">AU</span>
+      <span class="wordmark-name">{site.name}<span class="wordmark-period">.</span></span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
+      <span></span><span></span>
+    </button>
+
+    <nav class="primary-nav" id="primary-navigation" aria-label="Main navigation">
+      {navigation.map((item) => (
+        <a class:list={["nav-link", currentPath.startsWith(item.href) && "is-active"]} href={item.href}>
+          {item.label}
+        </a>
+      ))}
+      <a class="nav-contact" href="/contact/">Say hello <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const nav = document.querySelector<HTMLElement>('.primary-nav');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+    nav?.classList.toggle('is-open', !isOpen);
+    document.body.classList.toggle('menu-open', !isOpen);
+  });
+
+  nav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      toggle?.setAttribute('aria-expanded', 'false');
+      toggle?.setAttribute('aria-label', 'Open navigation');
+      nav.classList.remove('is-open');
+      document.body.classList.remove('menu-open');
+    });
+  });
+</script>

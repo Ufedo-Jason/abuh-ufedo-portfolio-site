@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+<BaseLayout title="Now" description="A current snapshot of what Abuh Ufedo is learning, building and thinking about.">
+  <div class="shell page-topline"><span>Current snapshot / 006</span><span>Updated November 2026</span></div>
+  <section class="shell page-intro">
+    <p class="eyebrow">A page about the present</p>
+    <h1>What has my attention<br /><em>at the moment.</em></h1>
+    <p class="lead">A living snapshot of the questions I'm following and the work currently taking up my time. This page should change as my priorities change.</p>
+  </section>
+  <section class="section">
+    <div class="shell">
+      <div class="now-grid">
+        <article class="now-card"><p class="eyebrow">01 / Learning</p><h2>Getting closer to the hardware.</h2><ul><li>RF and mmWave circuit design fundamentals</li><li>Digital integrated-circuit design and VLSI workflows</li><li>Photonic receiver front ends and transimpedance amplifiers</li><li>Practical circuit simulation and Python-based analysis</li></ul></article>
+        <article class="now-card"><p class="eyebrow">02 / Building</p><h2>Testing ideas, not just collecting them.</h2><ul><li>Documenting an optical receiver / TIA simulation study</li><li>Continuing to learn from the AfroVax prototype journey</li><li>Exploring small spiking-neural-network models with Brian2</li></ul></article>
+        <article class="now-card"><p class="eyebrow">03 / Thinking about</p><h2>How useful systems are actually made.</h2><p>I'm interested in the layers between a physical signal and useful information: devices, circuits, architectures, algorithms and the people who rely on the resulting technology.</p></article>
+        <article class="now-card"><p class="eyebrow">04 / Writing</p><h2>Making the learning visible.</h2><p>I'm building this site as a place to keep technical notes, explain project decisions, record lessons from failed experiments and write beyond the boundaries of engineering.</p></article>
+      </div>
+      <div class="spacer-sm"></div>
+      <p class="prose-small">This is a snapshot, not a permanent biography. Update the page every few months with what has changed, what you have finished and what has become interesting.</p>
+    </div>
+  </section>
+</BaseLayout>
